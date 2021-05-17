@@ -183,6 +183,17 @@ a:hover {
   background-position: right;
 }
 
+#signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+}
+#signup a {
+  margin-left: 4px;
+  color: teal;
+}
+
 @media screen and (max-width: 1050px) {
   .container {
     grid-gap: 5rem;
