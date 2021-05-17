@@ -4,8 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/patientLogin.css">
 </head>
 <body>
+
+    <img class="wave" src="../assets/login/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../assets/login/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="/auth/patientLogin" method="POST">
+				<img src="../assets/login/avatar.svg">
+				<h2 class="title">Welcome! Login here</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Email</h5>
+           		   		<input type="Email" class="input" name = "email">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input"  name = "password">
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+                <input type="submit" class="btn" value="Login">
+                
+                <h5>Don't have an account? <a href="/patientSignup">Create a new account</a></h5> 
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/patientLogin.js"></script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     <form action="/auth/patientLogin" method="POST">
         <h2>Login</h2>
