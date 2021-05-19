@@ -4,12 +4,21 @@ var bodyParser = require("body-parser");
 var mysql = require("mysql");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 dotenv.config({path: './.env'});
 app.use(cookieParser());
+app.use(
+    session({
+        resave: false,
+        saveUninitialized: true,
+        secret: "anyrandomstring",
+      })
+    );
+
 
 
 //db connect
@@ -32,6 +41,7 @@ db.connect(function(error) {
 
 app.use("/", require("./routes/pages"));
 app.use("/auth", require("./routes/auth"));
+app.use("/book_an_appointment", require("./routes/pages"));
 
 
 

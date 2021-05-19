@@ -14,4 +14,6 @@ router.post("/patientSignup", authController.register)
 
 router.post("/patientLogin", authController.login);
 
+router.get("/logout", authController.logout);
+
 module.exports = router;

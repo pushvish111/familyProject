@@ -184,7 +184,7 @@ nav {
   font-weight: 600;
   font-size: 40px;
   line-height: 37px;
-  color: #457a71;
+  color: #32be8f;
   text-align: center;
 }
 .appointment-input {
@@ -194,12 +194,12 @@ nav {
   transition: 0.2s;
 }
 ::placeholder {
-  color: #457a71;
+  color: #32be8f;
   opacity: 0.7;
 }
 input[type="text"]:focus {
   outline: none;
-  box-shadow: 0 0 0 1px #457a71;
+  box-shadow: 0 0 0 1px #32be8f;
 }
 .appointment-input > input {
   width: 100%;
@@ -207,7 +207,7 @@ input[type="text"]:focus {
   margin-top: 30px;
   border-radius: 1px;
   border: none;
-  border-bottom: 2px solid #457a71;
+  border-bottom: 2px solid #32be8f;
 }
 .button-book-now {
   width: 100%;

@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const session = require("express-session");
 
 const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
@@ -20,7 +21,6 @@ exports.login = async function(req, res){
         }
 
         db.query('SELECT * FROM users WHERE email = ?', [email], async function(error, results){
-            console.log(results); 
             if( !results || !(await bcrypt.compare(password, results[0].password))){
                  res.status(401).render("patientLogin", {
                      message: 'Email or password is incorrect'
@@ -40,7 +40,12 @@ exports.login = async function(req, res){
                      httpOnly: true
                  }
                  res.cookie('jwt', token, cookieOptions);
+                 req.session.isLoggedIn = true;
+                 req.session.save();
                  res.status(200).redirect('/');
+
+                //console.log(req.session);
+                console.log(results);
 
              }
 
@@ -87,4 +92,13 @@ exports.register = function(req, res){
         })
     });
 
+}
+
+exports.logout = function(req, res){
+
+    req.session.destroy(err => {
+        if(err) {
+            console.log(err);
+        } else res.redirect("/");
+    })
 }
